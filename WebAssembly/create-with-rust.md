@@ -53,19 +53,22 @@ cp target/wasm32-unknown-unknown/debug/project_name.wasm .
 ```
 
 ```bash
-npm init -y
-npm install --save-dev http-server
 vi index.html
 ```
 
 ```html
 <!DOCTYPE html>
 <script>
+const exportModule = async () => {
+  return await fetch("project_name.wasm")
+    .then(response => response.arrayBuffer())
+    .then(bytes => WebAssembly.instantiate(bytes, {}))
+    .then(results => results.instance.exports);
+};
+    
 (async () => {
-  const fetcher = fetch('project_name.wasm');
-  const results = await WebAssembly.instantiateStreaming(fetcher, {});
-  const { sum } = results.instance.exports;
-  
+  const { sum } = await exportModule();
+
   document.body.appendChild(document.createTextNode(sum(1, 2)));
 })();
 </script>
