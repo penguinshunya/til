@@ -18,6 +18,9 @@ pub fn sqrt2(a: f64) -> f64 {
 ```bash
 cargo build --target=wasm32-unknown-unknown
 cp target/wasm32-unknown-unknown/debug/project_name.wasm .
+```
+
+```bash
 vi index.html
 ```
 
