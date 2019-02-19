@@ -62,15 +62,15 @@ vi index.html
 ```html
 <!DOCTYPE html>
 <script>
-const exportModule = async () => {
-  return await fetch("project_name.wasm")
+const exports = async (wasm, imports = {}) => {
+  return await fetch(wasm)
     .then(response => response.arrayBuffer())
-    .then(bytes => WebAssembly.instantiate(bytes, {}))
+    .then(bytes => WebAssembly.instantiate(bytes, imports))
     .then(results => results.instance.exports);
 };
     
 (async () => {
-  const { sum } = await exportModule();
+  const { sum } = await exports("project_name.wasm");
 
   document.body.appendChild(document.createTextNode(sum(1, 2)));
 })();
