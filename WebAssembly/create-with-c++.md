@@ -30,7 +30,7 @@ python3 -m http.server 8000
 
 ## 参考
 
-Ecscripten  
+Emscripten  
 https://github.com/emscripten-core/emscripten
 
 Emscriptenのインストール手順  
