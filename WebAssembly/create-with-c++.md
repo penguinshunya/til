@@ -27,3 +27,5 @@ int main() {
 em++ index.cpp -s WASM=1 -o index.html
 python3 -m http.server 8000
 ```
+
+http://localhost:8000/
