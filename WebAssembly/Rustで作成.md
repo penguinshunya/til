@@ -33,7 +33,7 @@ cargo build --target wasm32-unknown-unknown
 cp target/wasm32-unknown-unknown/debug/project_name.wasm .
 ```
 
-```
+```bash
 # 最小のWebサーバ構築
 npm init -y
 npm install --save-dev http-server
@@ -53,6 +53,6 @@ vi index.html
 </script>
 ```
 
-```
+```bash
 npx http-server -o
 ```
