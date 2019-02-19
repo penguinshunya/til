@@ -20,6 +20,9 @@ Rustで記述したコードをJavaScriptで動かすまでの手順
 ```bash
 cargo new --lib project_name
 cd project_name
+```
+
+```
 vi src/lib.rs
 ```
 
