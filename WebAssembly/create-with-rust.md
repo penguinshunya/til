@@ -53,9 +53,6 @@ cp target/wasm32-unknown-unknown/debug/project_name.wasm .
 ```
 
 ```bash
-# 最小のWebサーバ構築
-npm init -y
-npm install --save-dev http-server
 vi index.html
 ```
 
@@ -73,5 +70,5 @@ vi index.html
 ```
 
 ```bash
-npx http-server -o
+python3 -m http.server 8000
 ```
