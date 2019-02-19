@@ -53,6 +53,8 @@ cp target/wasm32-unknown-unknown/debug/project_name.wasm .
 ```
 
 ```bash
+npm init -y
+npm install --save-dev http-server
 vi index.html
 ```
 
@@ -70,5 +72,5 @@ vi index.html
 ```
 
 ```bash
-python3 -m http.server 8000
+npx http-server -o
 ```
