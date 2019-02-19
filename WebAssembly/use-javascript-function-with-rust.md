@@ -27,6 +27,13 @@ vi index.html
 ```html
 <!DOCTYPE html>
 <script>
+const exports = async (wasm, imports = {}) => {
+  return await fetch(wasm)
+    .then(response => response.arrayBuffer())
+    .then(bytes => WebAssembly.instantiate(bytes, imports))
+    .then(results => results.instance.exports);
+};
+    
 const imports = {
   env: {
     sqrt: Math.sqrt
@@ -34,9 +41,7 @@ const imports = {
 };
 
 (async () => {
-  const fetcher = fetch('project_name.wasm');
-  const results = await WebAssembly.instantiateStreaming(fetcher, imports);
-  const { sqrt2 } = results.instance.exports;
+  const { sqrt2 } = await exports("project_name.wasm", imports);
   
   document.body.appendChild(document.createTextNode(sqrt2(10))); //=> 6.32455532...
 })();
