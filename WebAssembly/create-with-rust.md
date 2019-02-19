@@ -1,4 +1,21 @@
 ```bash
+# Final Directory Structure
+.
+├── Cargo.toml
+├── index.html
+├── package.json
+├── project_name.wasm
+├── src
+│   └── lib.rs
+└── target
+    ...
+    └── wasm32-unknown-unknown
+        └── debug
+            ...
+            └── project_name.wasm
+```
+
+```bash
 cargo new --lib project_name
 cd project_name
 vi src/lib.rs
