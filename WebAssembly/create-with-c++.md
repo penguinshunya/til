@@ -28,9 +28,7 @@ em++ index.cpp -s WASM=1 -o index.html
 python3 -m http.server 8000
 ```
 
-http://localhost:8000/
-
 ## 参考
 
-Emscriptenのインストール手順
+### Emscriptenのインストール手順
 https://emscripten.org/docs/getting_started/downloads.html
