@@ -1,4 +1,4 @@
-テンプレート: [create-with-rust.md](create-with-rust.md)
+テンプレート作成手順: [create-with-rust.md](create-with-rust.md)
 
 ```bash
 vi src/lib.rs
